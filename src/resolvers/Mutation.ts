@@ -1,37 +1,35 @@
-import { MutationResolvers } from '../generated/graphqlgen'
+import { MutationResolvers } from "../generated/graphqlgen";
+
+// This resolver file was scaffolded by github.com/prisma/graphqlgen, DO NOT EDIT.
+// Please do not import this file directly but copy & paste to your application code.
+
 
 export const Mutation: MutationResolvers.Type = {
-  createUser: (parent, { name }, ctx) => {
-    const id = ctx.data.idProvider()
-    const newUser = { id, name, postIDs: [] }
-    ctx.data.users.push(newUser)
-    return newUser
+  ...MutationResolvers.defaultResolvers,
+  createUser: (parent, args, ctx) => {
+    // throw new Error("Resolver not implemented");
+    const { name } = args
+    return ctx.prisma.createUser({
+      name: name || "unknown"
+    })
   },
-
-  createDraft: (parent, { title, content, authorId }, ctx) => {
-    const author = ctx.data.users.find(user => user.id === authorId)
-    if (author === null) {
-      throw new Error(`User with ID '${authorId}' does not exist.`)
-    }
-    const id = ctx.data.idProvider()
-    const newDraft = { id, title, content, authorId, published: false }
-    ctx.data.posts.push(newDraft)
-    author!.postIDs.push(id)
-    return newDraft
+  createDraft: (parent, args, ctx) => {
+    // throw new Error("Resolver not implemented");
+    const { title, content, authorId } = args
+    return ctx.prisma.createPost({
+      title, content, published: false, author: { connect: { id: authorId } }
+    })
   },
-
-  deletePost: (parent, { id }, ctx) => {
-    const postIndex = ctx.data.posts.findIndex(post => post.id === id)
-    if (postIndex < 0) {
-      throw new Error(`Post with ID '${id}' does not exist.`)
-    }
-    const deleted = ctx.data.posts.splice(postIndex, 1)
-    return deleted[0]
+  deletePost: (parent, args, ctx) => {
+    // throw new Error("Resolver not implemented");
+    const { id } = args
+    return ctx.prisma.deletePost({
+      id
+    })
   },
-
-  publish: (parent, { id }, ctx) => {
-    const post = ctx.data.posts.find(post => post.id === id)
-    post!.published = true
-    return post!
-  },
-}
+  publish: (parent, args, ctx) => {
+    // throw new Error("Resolver not implemented");
+    const { id } = args
+    return ctx.prisma.updatePost({ where: { id }, data: { published: true } })
+  }
+};

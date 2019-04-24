@@ -1,9 +1,13 @@
-import { PostResolvers } from '../generated/graphqlgen'
+// This resolver file was scaffolded by github.com/prisma/graphqlgen, DO NOT EDIT.
+// Please do not import this file directly but copy & paste to your application code.
+
+import { PostResolvers } from "../generated/graphqlgen";
 
 export const Post: PostResolvers.Type = {
   ...PostResolvers.defaultResolvers,
 
   author: (parent, args, ctx) => {
-    return ctx.data.users.find(user => user.id === parent.authorId)!
-  },
-}
+    const {id} = parent
+    return ctx.prisma.post({id}).author()
+  }
+};
