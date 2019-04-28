@@ -7,6 +7,7 @@
     "generate": "graphqlgen"
   },
   "dependencies": {
+    "graphql": "^14.2.1",
     "graphql-yoga": "^1.16.7",
     "prisma-client-lib": "^1.31.1"
   },
