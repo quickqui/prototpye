@@ -22,5 +22,21 @@ services:
       - "27017:27017"
     volumes:
       - mongo:/var/lib/mongo
+  model-server:
+    build:
+      context: ../model-server/
+    ports:
+      - "1111:1111"
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+  front:
+    build:
+      context: ../front/
+    depends_on:
+      - prisma
+      - model-server
+    ports:
+      - "3000:3000"
 volumes:
   mongo:
