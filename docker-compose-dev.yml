@@ -24,14 +24,19 @@ services:
     volumes:
       - postgres:/var/lib/postgresql/data
   model-server:
-    image: nielinjie/quickqui-model-server:latest
+    build:
+      context: ../model-server/
     expose:
       - 1111
     environment:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ../model-server/:/usr/app
+      - /usr/app/node_modules
   front:
-    image: nielinjie/quickqui-front:latest
+    build:
+      context: ../front/
     depends_on:
       - prisma
       - model-server
@@ -40,5 +45,8 @@ services:
       - model-server
     ports:
       - "3000:3000"
+    volumes:
+      - ../front/:/usr/app
+      - /usr/app/node_modules
 volumes:
   postgres: .
