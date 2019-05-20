@@ -1,14 +1,20 @@
-version: '3'
+# TODO copy到阿里容器服务的“创建应用——采用编排模版“可以用。但直接用docker-compose在本地up会报错。
+# nielinjies-Temp-bookPro:propotype nielinjie$ sh ./ali-up.sh 
+# Creating network "propotype_default" with the default driver
+# ERROR: The network driver must be specified.
+#
+#
+version: '2'
 services:
   prisma:
     image: prismagraphql/prisma:1.31
     restart: always
-    links:
-      - postgres
     depends_on:
       - postgres
     expose:
       - 4466
+    links:
+      - postgres
     environment:
       PRISMA_CONFIG: |
         port: 4466
@@ -28,7 +34,7 @@ services:
       POSTGRES_USER: prisma
       POSTGRES_PASSWORD: prisma
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - 数据保存:/var/lib/postgresql
   model-server:
     image: nielinjie/quickqui-model-server:latest
     expose:
@@ -50,5 +56,5 @@ services:
       - model-server
     ports:
       - "3000:3000"
-volumes:
-  postgres: ~
+    labels:
+      aliyun.routing.port_3000: front
