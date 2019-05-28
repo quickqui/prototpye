@@ -46,6 +46,7 @@ services:
     environment:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
+  # TODO 加入app-server 
   front:
     image: nielinjie/quickqui-front:latest
     depends_on:
