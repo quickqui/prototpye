@@ -53,10 +53,12 @@ services:
       - plantuml-service
     environment:
       - NODE_ENV=development
+      - ENV=dev_docker
       - CHOKIDAR_USEPOLLING=true
     volumes:
       - ../model-server/:/usr/app
       - /usr/app/node_modules
+      - ./:/modelProjectDir
   app-server:
     build:
       context: ../app-server/
@@ -82,6 +84,9 @@ services:
     volumes:
       - ../front/:/usr/app
       - /usr/app/node_modules
+    environment:
+      - NODE_ENV=development
+      - ENV=dev_docker
 volumes:
   postgres: ~
 
