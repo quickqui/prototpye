@@ -62,14 +62,19 @@ services:
   app-server:
     build:
       context: ../app-server/
+    depends_on:
+      - prisma
+      - model-server
     ports:
       - "4000:4000"
     environment:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
+      - ENV=dev_docker
     volumes:
       - ../app-server/:/usr/app
       - /usr/app/node_modules
+      - ./:/extendDir
   front:
     build:
       context: ../front/
@@ -84,6 +89,7 @@ services:
     volumes:
       - ../front/:/usr/app
       - /usr/app/node_modules
+      - ./:/extendDir
     environment:
       - NODE_ENV=development
       - ENV=dev_docker

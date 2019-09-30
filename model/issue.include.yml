@@ -3,6 +3,7 @@ includes:
   #   resource: 
   #     url: https://github.com/quickqui/models.git
   #     dir: user
+  #TODO 考虑把这种形式制定为默认甚至唯一形式。
   - protocol: libaray
     resource: 
       type: npm # package.json里面要定义
