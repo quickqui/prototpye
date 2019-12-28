@@ -1,38 +1,35 @@
 functions:
   - name: NotDone
-    menuPath: Issue/NotDone
-    icon: Done
-    base:
-      resource: Issue
-      function: list
-    filter:
-      done: false
-    sort:
-      createdAt: DESC
+    extend: functions/list
+    entry:
+      menuPath: Issue/NotDone
+      icon: Done
+    resource: Issue
+    query:
+      filter:
+        done: false
+      sort:
+        createdAt: DESC
     links:
       - label: FinishIssue
         type: entity
-        function: FinishIssue
-    roles:
-      - User
+        page: FinishIssue
   - name: Finished
-    menuPath: Issue/Finished
-    icon: Done
-    base:
-      resource: Issue
-      function: list
-    filter:
-      done: true
-    sort:
-      createdAt: DESC
-    roles:
-      - User
+    entry:
+      menuPath: Issue/Finished
+      icon: Done
+    resource: Issue
+    extend: functions/list
+    query:
+      filter:
+        done: true
+      sort:
+        createdAt: DESC
   - name: NotDoneCount
-    icon: Done
-    base:
-      resource: Issue
-      function: iconCard
-    filter:
-      done: false
-    roles:
-      - User
+    parameters:
+      icon: Done
+    resource: Issue
+    extend: functions/iconCard
+    query:
+      filter:
+        done: false

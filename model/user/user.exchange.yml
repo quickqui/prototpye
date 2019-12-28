@@ -1,0 +1,18 @@
+exchanges:
+  - name: UserFake
+    resources: [User]
+    from: "fake"
+    to: "back"
+    protocol: "dp"
+    parameters:
+      fakeData:
+        User:
+          - id: 1
+            name: ada
+  - name: FunctionsFake
+    resources: [Function]
+    from: "fake"
+    to: "back"
+    protocol: "dp"
+    parameters:
+      fakeData: "resolve:functionFake.json"

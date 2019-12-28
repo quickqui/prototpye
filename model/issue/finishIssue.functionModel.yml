@@ -1,9 +1,7 @@
 functions:
   - name: FinishIssue
-    base:
-      resource: Issue
-      function: edit
-    prefill:
-      done: true
-    roles:
-      - Admin
+    resource: Issue
+    extend: functions/edit
+    command:
+      prefill:
+        done: true

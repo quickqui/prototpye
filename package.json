@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/quickqui/prototype#readme",
   "dependencies": {
-    "models": "github:quickqui/models"
+    "@quick-qui/model-defines": "^2.2.0",
+    "@quick-qui/models": "^1.0.0"
   }
 }
