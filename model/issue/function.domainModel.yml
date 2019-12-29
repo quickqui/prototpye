@@ -6,7 +6,7 @@ entities:
         constraints:
           - required
       - name: owner
-        constraints: #只有toone的relation有用？
+        constraints: #TODO 只有toone的relation有用？
           - required
         relation:
           to: User

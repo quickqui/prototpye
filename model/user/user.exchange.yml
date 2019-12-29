@@ -7,12 +7,12 @@ exchanges:
     parameters:
       fakeData:
         User:
-          - id: 1
+          - id: '1'
             name: ada
   - name: FunctionsFake
-    resources: [Function]
+    resources: [Function, Issue]
     from: "fake"
     to: "back"
     protocol: "dp"
     parameters:
-      fakeData: "resolve:functionFake.json"
+      fakeData: "resolve:functionFake.yml"
