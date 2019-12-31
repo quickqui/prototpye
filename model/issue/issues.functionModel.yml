@@ -3,7 +3,7 @@ functions:
     extend: functions/list
     entry:
       menuPath: Issue/NotDone
-      icon: Done
+      icon: RadioButtonUnchecked
     resource: Issue
     query:
       filter:
@@ -17,7 +17,7 @@ functions:
   - name: Finished
     entry:
       menuPath: Issue/Finished
-      icon: Done
+      icon: CheckCircle
     resource: Issue
     extend: functions/list
     query:
@@ -27,9 +27,18 @@ functions:
         createdAt: DESC
   - name: NotDoneCount
     parameters:
-      icon: Done
+      icon: CheckCircle
     resource: Issue
     extend: functions/iconCard
     query:
       filter:
+        done: false
+  - name: IssueCreate
+    resource: Issue
+    extend: functions/create
+    entry:
+      menuPath: Issue/Create
+      icon: List
+    command: 
+      prefill: 
         done: false

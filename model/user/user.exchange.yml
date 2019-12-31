@@ -1,6 +1,6 @@
 exchanges:
   - name: UserFake
-    resources: [User]
+    resources: [User,Profile]
     from: "fake"
     to: "back"
     protocol: "dp"
@@ -9,6 +9,11 @@ exchanges:
         User:
           - id: '1'
             name: ada
+            'profile.id': '1'
+        Profile:
+          - id: '1'
+            code: 'Profile1'
+            description: 'I am user 1'
   - name: FunctionsFake
     resources: [Function, Issue]
     from: "fake"

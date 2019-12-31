@@ -1,0 +1,7 @@
+functions:
+  - name: UserList
+    resource: User
+    extend: 'functions/list'
+    entry:
+      menuPath: User/List
+      icon: People

@@ -1,0 +1,7 @@
+functions: 
+  - name: FunctionList
+    resource: Function
+    extend: functions/list
+    entry:
+      menuPath: Function/List
+      icon: List
