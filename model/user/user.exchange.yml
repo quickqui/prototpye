@@ -14,10 +14,4 @@ exchanges:
           - id: '1'
             code: 'Profile1'
             description: 'I am user 1'
-  - name: FunctionsFake
-    resources: [Function, Issue]
-    from: "fake"
-    to: "back"
-    protocol: "dp"
-    parameters:
-      fakeData: "resolve:functionFake.yml"
+
