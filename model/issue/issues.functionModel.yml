@@ -1,9 +1,10 @@
 functions:
   - name: NotDone
     extend: functions/list
-    entry:
-      menuPath: Issue/NotDone
-      icon: RadioButtonUnchecked
+    annotations:
+      page:
+        menuPath: Issue/NotDone
+        icon: RadioButtonUnchecked
     resource: Issue
     query:
       filter:
@@ -15,9 +16,10 @@ functions:
         type: entity
         page: FinishIssue
   - name: Finished
-    entry:
-      menuPath: Issue/Finished
-      icon: CheckCircle
+    annotations:
+      page:
+        menuPath: Issue/Finished
+        icon: CheckCircle
     resource: Issue
     extend: functions/list
     query:
@@ -36,9 +38,10 @@ functions:
   - name: IssueCreate
     resource: Issue
     extend: functions/create
-    entry:
-      menuPath: Issue/Create
-      icon: List
+    annotations:
+      page:
+        menuPath: Issue/Create
+        icon: List
     command: 
       prefill: 
         done: false
