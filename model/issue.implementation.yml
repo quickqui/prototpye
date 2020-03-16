@@ -1,26 +1,9 @@
-
+env:
+  EXTEND_PATH: ../prototype
 implementations:
   - name: back
     extend: "implementations/default-back-dev"
-    env:
-      EXTEND_PATH: ../prototype
   - name: web-front
     extend: "implementations/default-web-front-dev"
-    env:
-      EXTEND_PATH: ../prototype
-      REACT_APP_EXTEND_PATH: ../prototype
-
-  # - name: web-front
-  #   runtime: docker
-  #   env: 
-  #     NODE_ENV: development
-  #     ENV: dev_docker
-  #     REACT_APP_ENV: dev_docker
-  #   parameters:  
-  #     ports: [3000]
-  #     image: 'nielinjie/quickqui-front:latest'
-  #     links: ['back']
-  #     volumes: ['app-folder:/extendDir']
-  #     dependsOn: ['back']
-      
-    
+  - name: fake-data-server
+    runtime: provided
