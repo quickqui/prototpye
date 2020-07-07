@@ -1,21 +1,17 @@
 implementations:
-  # - name: npm-back
-  #   extend: "implementations/default-back-dev"
-  #   env:
-  #     PORT: 4001
-  #   parameters:
-  #     packageName: "@quick-qui/app-server"
-  # - name: npm-web-front
-  #   env:
-  #     PORT: 3001
-  #     APP_SERVER_URL: http://localhost:4001
-  #   extend: "implementations/default-web-front-dev"
-  #   parameters:
-  #     packageName: "@quick-qui/front"
-  # - name: npm-launcher
-  #   runtime: launcher
-  #   env:
-  #     MODEL_URL: "http://localhost:1111"
-  #   parameters:
-  #     launch: [npm-back, npm-web-front]
-  #     type: npm
+  - name: npm-back
+    extend: "implementations/back-npm"
+    env:
+      PORT: 4001
+  - name: npm-web-front
+    env:
+      PORT: 3001
+      APP_SERVER_URL: http://localhost:4001
+    extend: "implementations/web-front-npm"
+  - name: npm-launcher
+    runtime: launcher
+    env:
+      MODEL_URL: "http://localhost:1111"
+    parameters:
+      launch: [npm-back, npm-web-front]
+      type: npm
