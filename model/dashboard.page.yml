@@ -4,7 +4,7 @@ pages:
     menuPath: Dashboard
     icon: Dashboard
     layout: 
-      gride: 3
+      grid: 3
     places:
       - function: NotDoneCount
         presentation: normal
