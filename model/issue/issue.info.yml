@@ -1,0 +1,17 @@
+infos:
+  - name: Function
+    resources: [Function, Issue]
+    scope: domain
+    type: resource
+    annotations: 
+      implementation:
+        at: back
+        source: fake
+        fakeData: "resolve:functionFake.yml"
+  - name: functionSelected
+    type: event
+    scope: session
+    annotations: 
+      implementation:
+        at: front
+        
