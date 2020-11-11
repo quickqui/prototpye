@@ -6,3 +6,16 @@ functions:
       page:
         menuPath: Function/List
         icon: List
+    links:
+      - label: Detail
+        type: entity
+        page: functionMasterDetail
+        # parameters: id
+    parameters: 
+      out: 
+        selectedChanged: ${info:session/functionSelected}
+  - name: FunctionDetail
+    resource: Function
+    extend: functions/show
+    parameters: 
+        id: ${info:session/functionSelected.id}
