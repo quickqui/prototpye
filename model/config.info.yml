@@ -1,0 +1,13 @@
+infos:
+  - name: config
+    resources: ["Config"]
+    scope: local
+    type: resource
+    init:
+      Config:
+        - id: _default
+          name: configMe
+    annotations:
+      implementation:
+        at: front
+        source: storage
