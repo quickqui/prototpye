@@ -1,17 +1,9 @@
 implementations:
   - name: npm-back
     extend: "implementations/back-npm"
-    env:
-      PORT: 4001
   - name: npm-web-front
-    env:
-      PORT: 3001
-      APP_SERVER_URL: http://localhost:4001
     extend: "implementations/web-front-npm"
-  - name: npm-launcher
-    runtime: launcher
-    env:
-      MODEL_URL: "http://localhost:1111"
+  - name: issue-npm-launcher
+    extend: "implementations/npm-launcher"
     parameters:
-      launch: [npm-back, npm-web-front]
-      type: npm
+      launch: ["npm-back", "npm-web-front"]

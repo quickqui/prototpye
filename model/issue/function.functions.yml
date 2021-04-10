@@ -13,9 +13,9 @@ functions:
         # parameters: id
     parameters: 
       out: 
-        selectedChanged: ${info:session/functionSelected}
+        selectedChanged: ${info:functionSelected} #scope（session)没有必要，因为info里面是有scope的。
   - name: FunctionDetail
     resource: Function
     extend: functions/show
     parameters: 
-        id: ${info:session/functionSelected.id}
+        id: ${info:functionSelected/id} #.id变成/id，为了去符合url的规则p/a/t/h

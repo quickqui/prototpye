@@ -3,7 +3,7 @@ infos:
     resources: ["Config"]
     scope: local
     type: resource
-    init:
+    default:
       Config:
         - id: _default
           name: configMe

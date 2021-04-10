@@ -1,23 +1,11 @@
 implementations:
-  - name: dev-quick-back
+  - name: issue-raw-back
     extend: "implementations/back-raw"
-    env:
-      PORT: 4001
-  - name: dev-quick-web-front
-    env:
-      PORT: 3001
-      APP_SERVER_URL: http://localhost:4001
+  - name: issue-raw-web-front
     extend: "implementations/web-front-raw"
-    parameters:
-      path: 'front3'
-  - name: dev-quick-launcher
-    runtime: launcher
+  - name: issue-raw-launcher
+    extend: "implementations/raw-launcher"
     env:
       MODEL_PATH: "../prototype"
-      MODEL_URL: "http://localhost:1111"
     parameters:
-      launch: [dev-quick-back, dev-quick-web-front]
-      type: raw
-      model_server_path: 'model-server'
-      quickqui_base: '..'
-    
+      launch: ["issue-raw-back", "issue-raw-web-front"]
