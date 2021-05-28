@@ -17,8 +17,14 @@
   },
   "homepage": "https://github.com/quickqui/prototype#readme",
   "dependencies": {
-    "@quick-qui/implementation-model": "^1.5.1",
-    "@quick-qui/model-defines": "^2.7.0",
-    "@quick-qui/models": "^1.1.0"
+    "@quick-qui/data-provider": "^1.6.2",
+    "@quick-qui/front-chart": "^1.2.1",
+    "@quick-qui/implementation-model": "^1.8.0",
+    "@quick-qui/model-defines": "^2.7.9",
+    "@quick-qui/models": "^1.1.1",
+    "@types/lodash": "^4.14.170",
+    "@types/uuid": "^8.3.0",
+    "lodash": "^4.17.21",
+    "uuid": "^8.3.2"
   }
 }

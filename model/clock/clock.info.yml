@@ -1,0 +1,18 @@
+infos:
+  - name: clock
+    resources: [Clock,SetTimeRequest]
+    type: resource
+    scope: domain
+    annotations: 
+      implementation:
+        at: back
+        source: 'resolve:clock'
+  - name: clockEvent
+    events: [ClockEvent]
+    type: event
+    scope: domain
+    annotations:
+      implementation:
+        at: back
+        source: 'resolve:clockEvent'
+        

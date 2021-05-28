@@ -1,0 +1,19 @@
+functions:
+  - name: clockShow
+    resource: Clock
+    extend: functions/show
+    parameters:
+      id: "_default"
+      version: "${info:clockEvent/version}"
+    annotations:
+      page:
+        menuPath: Clock
+  - name: setTime
+    extend: functions/command
+    resource: SetTimeRequest
+    command:
+      redirect: clockShow
+    annotations:
+      page:
+        menuPath: SetTime
+      presentation: withUrl

@@ -3,3 +3,7 @@ implementations:
     extend: "implementations/flatNpm-launcher"
     parameters:
       launch: ["npm-back", "npm-web-front"]
+  - name: issue-product
+    extend: "implementations/flatNpm-launcher"
+    parameters:
+      launch: ["npm-back", "npm-web-front-product"]

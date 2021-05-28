@@ -3,6 +3,8 @@ implementations:
     extend: "implementations/back-npm"
   - name: npm-web-front
     extend: "implementations/web-front-npm"
+  - name: npm-web-front-product
+    extend: "implementations/web-front-npm-product"
   - name: issue-npm-launcher
     extend: "implementations/npm-launcher"
     parameters:

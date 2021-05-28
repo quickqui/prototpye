@@ -14,4 +14,12 @@ infos:
     annotations: 
       implementation:
         at: front
-        
+  - name: issueByFinished
+    type: resource
+    resources: [IssueByFinished]
+    scope: domain
+    annotations:
+      implementation:
+        at: front
+        source: 'resolve:issueDp'
+  

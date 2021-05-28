@@ -47,3 +47,9 @@ entities:
     properties:
       - name: code
         type: String
+  - name: IssueByFinished
+    properties: 
+      - name: done
+        type: string
+      - name: count
+        type: number

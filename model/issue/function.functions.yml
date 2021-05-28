@@ -18,4 +18,4 @@ functions:
     resource: Function
     extend: functions/show
     parameters: 
-        id: ${info:functionSelected/id} #.id变成/id，为了去符合url的规则p/a/t/h
+        id: ${info:functionSelected/payload/selectedId} #.id变成/id，为了去符合url的规则p/a/t/h
