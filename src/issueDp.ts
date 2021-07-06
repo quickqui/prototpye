@@ -5,7 +5,7 @@ import {
   GetListResult,
   GET_LIST,
 } from "@quick-qui/data-provider";
-import { implementationGlobal } from "@quick-qui/model-defines";
+import { implementationGlobal } from "@quick-qui/implementation-model";
 import _ from "lodash";
 
 const byTypes = forResourceAndFetchTypeOneParam(

@@ -1,4 +1,4 @@
-import { implementationGlobal } from "@quick-qui/model-defines";
+import { implementationGlobal } from "@quick-qui/implementation-model";
 setInterval(() => {
   const bus = implementationGlobal["eventBus"];
   if (bus) {
