@@ -2,7 +2,8 @@ infos:
   - name: user
     scope: domain
     type: resource
-    resources: [User, Profile]
+    resources: [users, Profile]
+    entities: [User,Profile]
     annotations:
       implementation:
         at: back

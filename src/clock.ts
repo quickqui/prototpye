@@ -8,13 +8,13 @@ import {
 import { v4 as uuidV4 } from "uuid";
 import { logger } from "./util";
 
-const clockDp = forResourceAndFetchTypeOneParam("Clock", GET_ONE, (param) =>
+const clockDp = forResourceAndFetchTypeOneParam("clock", GET_ONE, (param) =>
   Promise.resolve({
     data: { id: "_default", time: JSON.stringify(new Date()) },
   } as GetOneResult<unknown>)
 );
 const setTime = forResourceAndFetchTypeOneParam(
-  "SetTimeRequest",
+  "setTimeRequest",
   CREATE,
   (param) => {
     logger.info(param);

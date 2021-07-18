@@ -1,10 +1,11 @@
 infos:
   - name: config
-    resources: ["Config"]
+    resources: [config]
+    entities: [Config]
     scope: local
     type: resource
     default:
-      Config:
+      config:
         - id: _default
           name: configMe
     annotations:

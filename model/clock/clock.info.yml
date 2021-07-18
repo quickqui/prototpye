@@ -1,6 +1,7 @@
 infos:
   - name: clock
-    resources: [Clock,SetTimeRequest]
+    resources: [clock,setTimeRequest]
+    entities: [Clock,SetTimeRequest]
     type: resource
     scope: domain
     annotations: 
@@ -8,7 +9,8 @@ infos:
         at: back
         source: 'resolve:clock'
   - name: clockEvent
-    events: [ClockEvent]
+    resources: [clockEvent]
+    entities: [ClockEvent]
     type: event
     scope: domain
     annotations:

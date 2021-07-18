@@ -5,7 +5,7 @@ functions:
       page:
         menuPath: Issue/NotDone
         icon: RadioButtonUnchecked
-    resource: Issue
+    resource: issues
     query:
       filter:
         done: false
@@ -20,7 +20,7 @@ functions:
       page:
         menuPath: Issue/Finished
         icon: CheckCircle
-    resource: Issue
+    resource: issues
     extend: functions/list
     query:
       filter:
@@ -30,13 +30,13 @@ functions:
   - name: NotDoneCount
     parameters:
       icon: CheckCircle
-    resource: Issue
+    resource: issues
     extend: functions/iconCard
     query:
       filter:
         done: false
   - name: IssueCreate
-    resource: Issue
+    resource: issues
     extend: functions/create
     annotations:
       page:
@@ -46,7 +46,7 @@ functions:
       prefill: 
         done: false
   - name: IssueByFinished
-    resource: IssueByFinished
+    resource: issueByFinished
     annotations:
       page:
         menuPath: Issue/ByFinished

@@ -1,6 +1,6 @@
 functions:
   - name: clockShow
-    resource: Clock
+    resource: clock
     extend: functions/show
     parameters:
       id: "_default"
@@ -10,7 +10,7 @@ functions:
         menuPath: Clock
   - name: setTime
     extend: functions/command
-    resource: SetTimeRequest
+    resource: setTimeRequest
     command:
       redirect: clockShow
     annotations:

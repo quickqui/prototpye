@@ -1,6 +1,7 @@
 infos:
   - name: Function
-    resources: [Function, Issue]
+    resources: [functions, issues]
+    entities: [Function,Issue]
     scope: domain
     type: resource
     annotations: 
@@ -16,7 +17,8 @@ infos:
         at: front
   - name: issueByFinished
     type: resource
-    resources: [IssueByFinished]
+    resources: [issueByFinished]
+    entities: [IssueByFinished]
     scope: domain
     annotations:
       implementation:

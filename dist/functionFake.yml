@@ -1,7 +1,7 @@
-Function:
+functions:
   - id: '14'
     name: kaka
-Issue: 
+issues: 
   - id: '1'
     name: 'a issue for kaka'
     function.id: '14'

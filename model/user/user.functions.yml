@@ -1,6 +1,6 @@
 functions:
   - name: UserList
-    resource: User
+    resource: users
     extend: 'functions/list'
     annotations:
       page:

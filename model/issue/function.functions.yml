@@ -1,6 +1,6 @@
 functions: 
   - name: FunctionList
-    resource: Function
+    resource: functions
     extend: functions/list
     annotations:
       page:
@@ -15,7 +15,7 @@ functions:
       out: 
         selectedChanged: ${info:functionSelected} #scope（session)没有必要，因为info里面是有scope的。
   - name: FunctionDetail
-    resource: Function
+    resource: functions
     extend: functions/show
     parameters: 
         id: ${info:functionSelected/payload/selectedId} #.id变成/id，为了去符合url的规则p/a/t/h

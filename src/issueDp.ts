@@ -9,11 +9,11 @@ import { implementationGlobal } from "@quick-qui/implementation-model";
 import _ from "lodash";
 
 const byTypes = forResourceAndFetchTypeOneParam(
-  "IssueByFinished",
+  "issuesByFinished",
   GET_LIST,
   async (): Promise<GetListResult<unknown>> => {
     const existingDp: DataProvider = implementationGlobal?.["dataProvider"]!;
-    const allData = await existingDp(GET_LIST, "Issue", {
+    const allData = await existingDp(GET_LIST, "issues", {
       pagination: { page: 1, perPage: 10000 },
       sort: { field: "id", order: "ASC" },
       filter: {},
